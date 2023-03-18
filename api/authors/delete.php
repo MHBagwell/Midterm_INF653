@@ -26,7 +26,7 @@
         echo json_encode(array('id'=>$author->id));
     
     } else {
-        echo json_encode(array('message' => 'Missingincluded Parameters'));
+        echo json_encode(array('message' => 'Missing Required Parameters'));
     }
 
 ?> 

@@ -23,7 +23,7 @@
         $author->author = $data->author;
         $author->create();
     
-        echo json_encode(array('id'=>$db->lastInsertId(), 'author'=>$author->author));
+        echo json_encode(array('id'=> $db->lastInsertId(),'author'=>$author->author));
     
     } else {
         echo json_encode(array('message' => 'Missing Required Parameters'));

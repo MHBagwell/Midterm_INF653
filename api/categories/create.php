@@ -27,7 +27,7 @@
       echo json_encode(array("id"=>$db->lastInsertId(), "category"=>$category->category));
     
     } else {
-      echo json_encode(array('message' => 'Missing  included Parameters'));
+      echo json_encode(array('message' => 'Missing Required Parameters'));
     }
 
 ?> 

@@ -23,7 +23,7 @@ class Category {
         FROM
         " .$this->table. "
         ORDER BY
-        id ASC";
+        id";
 
         // Prepare statement
         $stmt = $this->conn->prepare($query);
@@ -45,7 +45,7 @@ class Category {
         " .$this->table. "
         WHERE 
         id = ?
-        LIMIT 0,1";
+        LIMIT 1 OFFSET 0";
 
         // Prepare statement
         $stmt = $this->conn->prepare($query);
@@ -110,7 +110,7 @@ class Category {
 
         //Bind data
         $stmt->bindParam(':id', $this->id);
-        $stmt->bindParam(':category', $this->caegory);
+        $stmt->bindParam(':category', $this->category);
 
         //execute query
         if($stmt->execute()){

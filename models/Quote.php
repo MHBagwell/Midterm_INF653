@@ -61,7 +61,7 @@
             categories ON quotes.category_id = categories.id
             WHERE 
             quotes.id = ?
-            LIMIT 0,1";
+            LIMIT 1 OFFSET 0";
 
             // Prepare statement
             $stmt = $this->conn->prepare($query);
@@ -125,7 +125,7 @@
             SET 
             quote = :quote,
             author_id = :author_id,
-            category = :category
+            category_id = :category_id
             WHERE 
             id = :id";
 
