@@ -175,16 +175,10 @@
             if($stmt->execute()){
                 return true;
             }else{ 
-                printf("Error: %s. \n", $stmt->error);
+                echo json_encode(array('message' => 'No Quotes Found'));
                 return false;
             }
 
         }
-
-
-
-
-
-
     }
 ?>        
