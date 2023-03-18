@@ -1,6 +1,6 @@
 <?php
     header('Access-Control-Allow-Origin: *');
-    header('Content-Tupe:application/json');
+    header('Content-Type:application/json');
     
     include_once '../../config/Database.php';
     include_once '../../models/Category.php';
@@ -31,7 +31,7 @@
             'category' => $category
           );
 
-          array_push($category_arr, $category_item);
+          arr_push($category_arr, $category_item);
         }
 
         echo json_encode($category_arr);

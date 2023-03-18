@@ -1,6 +1,6 @@
 <?php
     header('Access-Control-Allow-Origin: *');
-    header('Content-Tupe:application/json');
+    header('Content-Type:application/json');
     
     include_once '../../config/Database.php';
     include_once '../../models/Category.php';
@@ -30,7 +30,7 @@
             'author' => $author
           );
 
-          array_push($author_arr, $author_item);
+          arr_push($author_arr, $author_item);
         }
 
         echo json_encode($author_arr);

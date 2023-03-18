@@ -12,16 +12,16 @@ if ($method === 'OPTIONS') {
 
 if($method === 'GET'){
     if(isset($_GET['id'])){
-        require_once('read_single.php');
+        include_once('read_single.php');
     }else{
-        require_once('read.php');
+        include_once('read.php');
     }    
-}else if($method === 'PUT'){
-    require_once('update.php');
 }else if($method === "POST"){
-    require_once('create.php');
+    include_once('create.php');
+}else if($method === 'PUT'){
+        include_once('update.php');    
 }else if($method === "DELETE"){
-    require_once('delete.php');
+    include_once('delete.php');
 }else{
     echo("Incorrect method being used.");
 }
