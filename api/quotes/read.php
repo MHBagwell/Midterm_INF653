@@ -31,7 +31,7 @@
                 'category' => $category
             );
 
-            arr_push($quotes_arr, $quote_item);
+            array_push($quotes_arr, $quote_item);
         }
 
         echo json_encode($quotes_arr);

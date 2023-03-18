@@ -31,7 +31,7 @@
             'category' => $category
           );
 
-          arr_push($category_arr, $category_item);
+          array_push($category_arr, $category_item);
         }
 
         echo json_encode($category_arr);

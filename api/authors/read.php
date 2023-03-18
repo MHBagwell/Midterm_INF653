@@ -30,7 +30,7 @@
             'author' => $author
           );
 
-          arr_push($author_arr, $author_item);
+          array_push($author_arr, $author_item);
         }
 
         echo json_encode($author_arr);

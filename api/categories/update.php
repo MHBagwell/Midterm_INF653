@@ -19,17 +19,17 @@
     $data = json_decode(file_get_contents("php://input"));
 
     // Update
-  if(isset($data->category)) {
+    if(isset($data->category)) {
 
-    $category->id = $data->id;
-    $category->category = $data->category;
-    $category->update();
+      $category->id = $data->id;
+      $category->category = $data->category;
+      $category->update();
     
-    echo json_encode(array('id'=>$category->id, 'category'=>$category->category));
+      echo json_encode(array('id'=>$category->id, 'category'=>$category->category));
     
-  } else {
-    echo json_encode(array('message' => 'Missing Required Parameters'));
-}
+    } else {
+      echo json_encode(array('message' => 'Missing Required Parameters'));
+    }
 
 ?> 
  
