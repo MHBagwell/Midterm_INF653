@@ -24,7 +24,7 @@
             //create query
             $query = "SELECT
             quotes.id,
-            quotes.quotes,
+            quotes.quote,
             authors.author, 
             categories.category
             FROM
