@@ -37,8 +37,8 @@
             // Prepare statement
             $stmt = $this->conn->prepare($query);
     
-            //Excute query
-            $stmt->excute();
+            //Execute query
+            $stmt->execute();
 
             return $stmt;
         }
