@@ -6,7 +6,7 @@
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Access-Control-Allow-Methods,Content-Type, Authorization, X-Requested-With');
     
     include_once '../../config/Database.php';
-    include_once '../../models/Category.php';
+    include_once '../../models/Author.php';
 
     //database connection
     $database = new Database();
