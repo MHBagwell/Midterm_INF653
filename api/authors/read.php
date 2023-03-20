@@ -38,7 +38,7 @@
     } else {
         // No Categories
         echo json_encode(
-          array('message' => 'author_id Not Found')
+          array('message' => 'No Authors Found')
         );
     }
 
