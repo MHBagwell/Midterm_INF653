@@ -7,6 +7,7 @@
     
     include_once '../../config/Database.php';
     include_once '../../models/Quote.php';
+    include_once '../../models/Authors.php';
     include_once '../../functions/Function.php';
       
     //DB connection
