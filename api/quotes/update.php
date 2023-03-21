@@ -19,7 +19,7 @@ $quote = new Quote($db);
 //Get raw posted data
 $data = json_decode(file_get_contents("php://input"));
 
-if(isset($data->id) || isset($data->quote) || isset($data->author_id) || isset($data->category_id)){
+if(isset($data->id) && isset($data->quote) && isset($data->author_id) && isset($data->category_id)){
 
     //set data
     $quote->id = $data->id;
