@@ -27,9 +27,9 @@
     
         $quote->create();
         echo json_encode(array("id"=> $db->lastInsertId(), "quote"=>$quote->quote, "author_id"=>$quote->author_id, "category_id"=>$quote->category_id));
-    }else if(!isset($data->author_id)){
+    }else if(!isset($data->author_id) && isset($data->category_id)){
         echo json_encode(array('message' => 'author_id Not Found'));
-    }else if(!isset($data->category_id)){
+    }else if(!isset($data->category_id) && isset($data->author_id)){
         echo json_encode(array('message' => 'category_id Not Found'));
     }else {
         echo json_encode(array('message' => 'Missing Required Parameters'));
