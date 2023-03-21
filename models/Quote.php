@@ -148,10 +148,10 @@
             
             // execute query
             if($stmt->execute()){
-                return true;
+                //return true;
             }else{
                 printf("Error: %s.\n", $stmt->error);
-                return false;
+                //return false;
             }
         }
 
