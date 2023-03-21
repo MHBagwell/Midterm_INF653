@@ -176,7 +176,7 @@
             if($stmt->execute()){
                 return true;
             }else{ 
-                echo json_encode(array('message' => 'No Quotes Found'));
+                //echo json_encode(array('message' => 'No Quotes Found'));
                 return false;
             }
 
