@@ -28,7 +28,7 @@ if((isset($author->id) && isset($author->author))){
 
     print_r(json_encode($author_arr));
 }else{
-    print_r(json_encode(array('message' => 'Missing Required Parameters')));
+    print_r(json_encode(array('message' => 'author_id Not Found')));
 }
 
 ?>

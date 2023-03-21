@@ -28,7 +28,7 @@
       echo json_encode(array('id'=>$author->id, 'author'=>$author->author));
     
     } else {
-      echo json_encode(array('message' => 'Author not updated'));
+      echo json_encode(array('message' => 'Missing Required Parameters'));
     }
 
 ?> 
