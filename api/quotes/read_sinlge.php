@@ -28,9 +28,9 @@ if((isset($quote->id) && isset($quote->quote))){
         'category'=> $quote->category
     );
     
-    print_r(json_encode($quote_arr));
+    echo json_encode($quote_arr);
 }else{
-    print_r(json_encode(array('message' => 'No Quotes Found')));
+    echo json_encode(array('message' => 'No Quotes Found'));
 }
 
 ?>

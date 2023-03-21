@@ -82,6 +82,7 @@
                 $this->category = $row['category'];
                 return true;
             }else{
+                echo json_encode(array('message' => 'No Quotes Found'));
                 return false;
             }
         }
@@ -176,7 +177,7 @@
                 return true;
             }else{ 
                 echo json_encode(array('message' => 'No Quotes Found'));
-                //return false;
+                return false;
             }
 
         }
