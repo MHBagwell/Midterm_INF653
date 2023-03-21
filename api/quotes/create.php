@@ -7,8 +7,8 @@
     
     include_once '../../config/Database.php';
     include_once '../../models/Quote.php';
-    include_once '../../models/Author.php';
-    include_once '../../models/Category.php';
+    //include_once '../../models/Author.php';
+    //include_once '../../models/Category.php';
   
     //DB connection
     $database = new Database();
