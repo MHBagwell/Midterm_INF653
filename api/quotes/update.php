@@ -8,6 +8,8 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Methods, Content-Type
 //required files
 include_once '../../config/Database.php';
 include_once '../../models/Quote.php';
+include_once '../../models/Author.php';
+include_once '../../models/Category.php';
 include_once '../../functions/Function.php';
 
 //Db connection
@@ -28,9 +30,9 @@ if(isset($data->id) && isset($data->quote) && isset($data->author_id) && isset($
     $quote->author_id = $data->author_id;
     $quote->category_id = $data->category_id;
 
-    if(!isValid($quote->author_id, $quote)){
+    if(!isValid($data->author_id, new Author($db))){
         echo json_encode(array('message'=> 'author_id Not Found'));
-    }else if(!isValid($quote->category_id, $quote)){
+    }else if(!isValid($data->category_id, new Category($db))){
         echo json_encode(array('message'=> 'category_id Not Found'));
     }else if ($quote->update()){
         echo json_encode(array('id'=>$quote->id,'quote'=>$quote->quote,'author_id'=>$quote->author_id,'category_id'=>$quote->category_id));
