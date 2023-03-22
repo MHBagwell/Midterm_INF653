@@ -43,7 +43,7 @@ if(isset($data->id) && isset($data->quote) && isset($data->author_id) && isset($
     if ($quote->update()){
         echo json_encode(array('id'=>$quote->id,'quote'=>$quote->quote,'author_id'=>$quote->author_id,'category_id'=>$quote->category_id));
     }else{
-       echo json_encode(array('message' => 'No Quotes Found'));
+       echo json_encode(array('message' => 'No Quotes Found' ));
     }
 
 }else{
