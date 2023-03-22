@@ -22,7 +22,7 @@
 
     //Delete
     if($quote->delete()) {
-        echo json_encode(array("id"=>$quote->id));
+        echo json_encode(array('id'=>$quote->id));
     } else {
         echo json_encode(array('message' => 'No Quotes Found'));
     }
