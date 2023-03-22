@@ -39,12 +39,15 @@ if(isset($data->id) && isset($data->quote) && isset($data->author_id) && isset($
         echo json_encode(array('message'=> 'category_id Not Found'));
         exit();
     }
+
+    if (empty($data->quote)) {
+        echo json_encode(array('message' => 'No Quotes Found'));
+        exit();
+	}
     
     if ($quote->update()){
         echo json_encode(array('id'=>$quote->id,'quote'=>$quote->quote,'author_id'=>$quote->author_id,'category_id'=>$quote->category_id));
-    }else if (empty($quote->quote)) {
-        echo json_encode(array('message' => 'No Quotes Found'));
-	}
+    }
 
 }else{
     echo json_encode(array('message' => 'Missing Required Parameters'));
