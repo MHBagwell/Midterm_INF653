@@ -5,6 +5,7 @@
     header('Access-Control-Allow-Methods: POST');
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Access-Control-Allow-Methods,Content-Type, Authorization, X-Requested-With');
     
+    //required files
     include_once '../../config/Database.php';
     include_once '../../models/Quote.php';
     include_once '../../models/Author.php';
@@ -27,12 +28,13 @@
         $quote->author_id = $data->author_id;
         $quote->category_id = $data->category_id;
 
+        //checks for author_id/category_id
         if(!isValid($data->author_id, new Author($db))){
             echo json_encode(array('message' => 'author_id Not Found'));
         }else if(!isValid($data->category_id, new Category($db))){
             echo json_encode(array('message' => 'category_id Not Found'));
         }else {
-            $quote->create();
+            $quote->create();//create
             echo json_encode(array("id"=> $db->lastInsertId(), "quote"=>$quote->quote, "author_id"=>$quote->author_id, "category_id"=>$quote->category_id));
         }        
 

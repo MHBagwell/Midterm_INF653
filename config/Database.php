@@ -1,6 +1,8 @@
 <?php
 
 class Database{
+
+    //DB params
     private $conn;
     private $host;
     private $port;
@@ -16,10 +18,11 @@ class Database{
         $this->port = getenv('PORT');
     }
 
+    //DB connect
     public function connect(){
-        //instead of $this->conn = null;
+        
         if($this->conn){
-            //connection already exists, return it
+            
             return $this->conn;
         }else{
             $dsn = "pgsql:host={$this->host};port={$this->port};dbname={$this->dbname};";

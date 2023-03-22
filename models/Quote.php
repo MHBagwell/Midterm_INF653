@@ -1,6 +1,7 @@
 <?php
     class Quote {
-        //DB stuff
+
+        //Variables
         private $conn;
         private $table = 'quotes';
 
@@ -13,7 +14,6 @@
         public $category_id;
 
         //Constructor with DB
-
         public function __construct($db) {
             $this->conn = $db;
         }
@@ -74,7 +74,6 @@
 
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Set properties
             if(isset($row['id'])&& isset($row['author'])){
                 $this->id = $row['id'];
                 $this->quote = $row['quote'];

@@ -5,6 +5,7 @@ class Author{
     private $conn;
     private $table = 'authors';
 
+    //Author Properties
     public $id;
     public $author;
 
@@ -57,7 +58,6 @@ class Author{
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Set properties
         if(isset($row['id'])&& isset($row['author'])){
             $this->id = $row['id'];
             $this->author = $row['author'];

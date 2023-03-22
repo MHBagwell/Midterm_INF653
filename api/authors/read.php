@@ -1,7 +1,10 @@
 <?php
+
+    //Headers
     header('Access-Control-Allow-Origin: *');
     header('Content-Type:application/json');
-    
+
+    //required files
     include_once '../../config/Database.php';
     include_once '../../models/Author.php';
 
@@ -19,7 +22,6 @@
     $num = $result->rowCount();
 
     if($num > 0) {
-        // Author array
         $author_arr = array();
 
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -36,10 +38,7 @@
         echo json_encode($author_arr);
 
     } else {
-        // No Categories
-        echo json_encode(
-          array('message' => 'No Authors Found')
-        );
+        echo json_encode(array('message' => 'No Authors Found'));
     }
 
   ?>

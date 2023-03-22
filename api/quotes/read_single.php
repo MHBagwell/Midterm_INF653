@@ -1,23 +1,24 @@
 <?php
 
-// Headers
+//Headers
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
+//required files
 include_once '../../config/Database.php';
 include_once '../../models/Quote.php';
 
-//Create database object
+//DB connection
 $database = new Database();
 $db = $database->connect();
 
-// Create quote object
+//Create quote object
 $quote = new Quote($db);
 
-// Get ID
+//Get ID
 $quote->id = isset($_GET['id']) ? $_GET['id']: die();
 
-// Get quote
+//Get quote
 $quote->read_single();
 
 if((isset($quote->id) && isset($quote->quote))){

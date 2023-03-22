@@ -1,23 +1,24 @@
 <?php
 
-// Headers
+//Headers
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
+//required files
 include_once '../../config/Database.php';
 include_once '../../models/Category.php';
 
-//create database object
+//DB connection
 $database = new Database();
 $db = $database->connect();
 
-// create category object
+//create category object
 $category = new Category($db);
 
-// get id
+//get ID
 $category->id = isset($_GET['id']) ? $_GET['id']: die();
 
-// Get post
+//Get post
 $category->read_single();
 
 if((isset($category->id) && isset($category->category))){

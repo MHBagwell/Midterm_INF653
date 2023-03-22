@@ -30,16 +30,19 @@ if(isset($data->id) && isset($data->quote) && isset($data->author_id) && isset($
     $quote->author_id = $data->author_id;
     $quote->category_id = $data->category_id;
 
+    //check for author_id
     if(!isValid($data->author_id, new Author($db))){
         echo json_encode(array('message'=> 'author_id Not Found'));
         exit();
     }
     
+    //check for category_id
     if(!isValid($data->category_id, new Category($db))){
         echo json_encode(array('message'=> 'category_id Not Found'));
         exit();
     }
     
+    //Update
     if ($quote->update()){
         echo json_encode(array('id'=>$quote->id,'quote'=>$quote->quote,'author_id'=>$quote->author_id,'category_id'=>$quote->category_id));
     }else{

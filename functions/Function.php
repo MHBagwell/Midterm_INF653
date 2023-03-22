@@ -1,6 +1,6 @@
 <?php
 
-//checks if id's exists
+//checks if ID's exists
 function isValid($id, $model){
     $model->id = $id;
 

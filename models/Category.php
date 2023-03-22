@@ -1,4 +1,5 @@
 <?php
+
 class Category {
     //Variables
     private $conn;
@@ -9,7 +10,6 @@ class Category {
     public $category;
 
     //Constructor with DB
-
     public function __construct ($db) {
         $this->conn = $db;
     }
@@ -58,7 +58,6 @@ class Category {
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Set properties
         if(isset($row['id'])&& isset($row['category'])){
             $this->id = $row['id'];
             $this->category = $row['category'];

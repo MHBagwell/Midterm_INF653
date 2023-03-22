@@ -1,8 +1,10 @@
 <?php
 
+    //Headers
     header('Access-Control-Allow-Origin: *');
     header('Content-Type:application/json');
     
+    //required files
     include_once '../../config/Database.php';
     include_once '../../models/Quote.php';
 
@@ -10,7 +12,7 @@
     $database = new Database();
     $db = $database->connect();
 
-    // create quote object
+    //create quote object
     $quote = new Quote($db);
 
     $result = $quote->read();
