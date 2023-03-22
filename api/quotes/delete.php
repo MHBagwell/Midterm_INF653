@@ -17,16 +17,15 @@
 
     // get input
     $data = json_decode(file_get_contents("php://input"));
-
+   
     $quote->id = $data->id;
 
     //Delete
-    if($quote->delete()) {
+    if(isset($quote->id)) {
+        $quote->delete();
         echo json_encode(array('id'=>$quote->id));
     } else {
-        if(!isset($data->id)){
-            echo json_encode(array('message' => 'No Quotes Found'));
-        }
+        echo json_encode(array('message' => 'No Quotes Found'));
         
     }
 
