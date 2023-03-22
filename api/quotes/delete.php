@@ -8,9 +8,7 @@
     //required files
     include_once '../../config/Database.php';
     include_once '../../models/Quote.php';
-    include_once '../../models/Author.php';
-    include_once '../../functions/Function.php';
-  
+      
     //DB connection
     $database = new Database();
     $db = $database->connect();
@@ -23,19 +21,13 @@
    
     $quote->id = $data->id;
 
-    if(!isValid($data->author_id, new Author($db))){
-        echo json_encode(array('message'=> 'author_id Not Found'));
-        exit();
-    }
-
     //Delete
-    if(isset($data->id)) {
-        $quote->delete();
+    $quote->delete();
+
+    if($quote->id !== null){
         echo json_encode(array('id'=>$quote->id));
-    } else {
+    }else{
         echo json_encode(array('message' => 'No Quotes Found'));
     }
-
-
 
 ?>
