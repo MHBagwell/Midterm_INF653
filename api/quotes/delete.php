@@ -21,12 +21,11 @@
     $quote->id = $data->id;
 
     //Delete
-    if(isset($quote->id)) {
+    if(isset($data->id)) {
         $quote->delete();
         echo json_encode(array('id'=>$quote->id));
     } else {
         echo json_encode(array('message' => 'No Quotes Found'));
-        
     }
 
 
