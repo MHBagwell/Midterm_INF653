@@ -10,6 +10,7 @@
     $database = new Database();
     $db = $database->connect();
 
+    // create quote object
     $quote = new Quote($db);
 
     $result = $quote->read();
